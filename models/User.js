@@ -10,24 +10,6 @@ const usersSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please provide a value for 'password'"],
     },
-    firstName: {
-      type: String,
-      required: [true, "Please provide a value for 'first name'"],
-    },
-    lastName: {
-      type: String,
-      required: [true, "Please provide a value for 'last name'"],
-    },
-    address: {
-      type: String,
-      required: [true, "Please provide a value for 'address'"],
-    },
-    reviews: [],
-    admin: {
-      type: Boolean,
-      required: [true, "Please provide a value for 'admin'"],
-      default: false,
-    },
   },
   { useUnifiedTopology: true }
 );
