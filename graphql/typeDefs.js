@@ -3,13 +3,6 @@ import { gql } from 'apollo-server';
 export const typeDefs = gql`
   type Query {
     getAllProducts: [Product!]
-    getAllCategories: [Categories!]
-    getOneProduct(productId: ID!): Product
-  }
-
-  type Categories {
-    category: String!
-    image: String!
   }
 
   type Product {
@@ -18,6 +11,7 @@ export const typeDefs = gql`
     slug: String!
     name: String!
     image: Image!
+    category: String!
     categoryImage: CategoryImage!
     new: Boolean!
     price: Int!
