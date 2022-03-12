@@ -60,6 +60,10 @@ const productSchema = new mongoose.Schema(
       type: Array,
       required: [true, "Please provide a value for 'others'"],
     },
+    categorySummaryImages: {
+      type: Object,
+      required: [true, "Please provide a value for 'category summary images'"],
+    },
   },
 
   { useUnifiedTopology: true }

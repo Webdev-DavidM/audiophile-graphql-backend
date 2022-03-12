@@ -96,6 +96,10 @@ const products = [
         image: '/assets/carousel/image-zx7-speaker.jpg',
       },
     ],
+    categorySummaryImages: {
+      category: 'earphones',
+      image: '/assets/shared/desktop/image-earphones.png',
+    },
   },
   {
     id: 2,
@@ -189,6 +193,10 @@ const products = [
         image: '/assets/carousel/image-zx7-speaker.jpg',
       },
     ],
+    categorySummaryImages: {
+      category: 'headphones',
+      image: '/assets/shared/desktop/image-headphones.png',
+    },
   },
   {
     id: 3,
@@ -294,7 +302,12 @@ const products = [
         image: '/assets/carousel/image-zx7-speaker.jpg',
       },
     ],
+    categorySummaryImages: {
+      category: 'headphones',
+      image: '/assets/shared/desktop/image-headphones.png',
+    },
   },
+
   {
     id: 4,
     stock: 3,
@@ -403,6 +416,10 @@ const products = [
         image: '/assets/carousel/image-zx7-speaker.jpg',
       },
     ],
+    categorySummaryImages: {
+      category: 'headphones',
+      image: '/assets/shared/desktop/image-headphones.png',
+    },
   },
   {
     id: 5,
@@ -500,6 +517,10 @@ const products = [
         image: '/assets/carousel/image-zx7-speaker.jpg',
       },
     ],
+    categorySummaryImages: {
+      category: 'speakers',
+      image: '/assets/shared/desktop/image-speakers.png',
+    },
   },
   {
     id: 6,
@@ -597,6 +618,10 @@ const products = [
         image: '/assets/carousel/image-zx7-speaker.jpg',
       },
     ],
+    categorySummaryImages: {
+      category: 'speakers',
+      image: '/assets/shared/desktop/image-speakers.png',
+    },
   },
 ];
 

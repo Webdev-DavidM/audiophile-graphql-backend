@@ -1,8 +1,6 @@
 import mongoose from 'mongoose';
 import connectDB from '../config/db.js';
-import Category from '../models/Category.js';
 import products from './products.js';
-import category from './category.js';
 import Product from '../models/Product.js';
 import users from './users.js';
 import User from '../models/User.js';
@@ -19,12 +17,6 @@ const importData = async () => {
       return { ...product };
     });
     await Product.insertMany(productList);
-
-    await Category.deleteMany();
-    const categoryList = category.map((category) => {
-      return { ...category };
-    });
-    await Category.insertMany(categoryList);
 
     const hashUserPassword = async (user) => {
       const hashedPassword = await bcrypt.hash(user.password, 10);

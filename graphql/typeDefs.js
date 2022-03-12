@@ -5,6 +5,30 @@ export const typeDefs = gql`
     getAllProducts: [Product!]
   }
 
+  type Query {
+    getAllProductsByCategory(category: String!): [Product!]
+  }
+
+  type Query {
+    getProduct(slug: String!): ProductResponseObject!
+  }
+
+  type ProductResponseObject {
+    code: Int!
+    success: Boolean!
+    product: Product
+  }
+
+  type Query {
+    logIn(email: String!, password: String!): LoginResponseObject
+  }
+
+  type LoginResponseObject {
+    code: Int!
+    success: Boolean!
+    message: String!
+  }
+
   type Product {
     id: ID!
     stock: Int!
@@ -20,6 +44,12 @@ export const typeDefs = gql`
     items: [Item!]
     gallery: [GalleryObject]
     others: [Other!]
+    categorySummaryImages: CategoryImages
+  }
+
+  type CategoryImages {
+    category: String!
+    image: String!
   }
 
   type Image {
