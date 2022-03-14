@@ -10,14 +10,19 @@ import cors from 'cors';
 // definition and your set of resolvers.
 const server = new ApolloServer({ typeDefs, resolvers });
 
-const app = express();
-app.use(express.static('public'));
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
-});
+// const app = express();
+// app.use(express.static('public'));
+// app.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+// });
 
 // The `listen` method launches a web server.
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
   connectDB();
+  const app = express();
+  app.use(express.static('public'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+  });
   console.log(`🚀 Server ready at ${url}`);
 });
