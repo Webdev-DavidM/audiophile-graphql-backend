@@ -3,7 +3,6 @@ import connectDB from './config/db.js';
 import { typeDefs } from './graphql/typeDefs.js';
 import { resolvers } from './graphql/resolvers.js';
 import express, { application } from 'express';
-import cors from 'cors';
 
 import cors from 'cors';
 
