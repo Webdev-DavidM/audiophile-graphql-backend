@@ -11,7 +11,7 @@ app.use(cors());
 app.use('/graphql', (req, res) => {
   // The ApolloServer constructor requires two parameters: your schema
   // definition and your set of resolvers.
-  const server = new ApolloServer({ typeDefs, resolvers });
+  new ApolloServer({ typeDefs, resolvers });
 });
 
 app.use(express.static('public'));
@@ -23,5 +23,6 @@ app.get('*', (req, res) => {
 const port = process.env.PORT || 4000;
 
 app.listen(port, () => {
+  connectDB();
   console.log('listening on port', port);
 });
