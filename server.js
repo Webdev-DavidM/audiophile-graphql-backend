@@ -8,7 +8,7 @@ import cors from 'cors';
 
 const app = express();
 app.use(cors());
-app.use('/graphql', (req, res) => {
+app.get('/graphql', (req, res) => {
   // The ApolloServer constructor requires two parameters: your schema
   // definition and your set of resolvers.
   new ApolloServer({ typeDefs, resolvers });
