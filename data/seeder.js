@@ -18,6 +18,8 @@ const importData = async () => {
     });
     await Product.insertMany(productList);
 
+    await User.deleteMany();
+
     const hashUserPassword = async (user) => {
       const hashedPassword = await bcrypt.hash(user.password, 10);
       user.password = hashedPassword;

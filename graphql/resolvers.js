@@ -3,6 +3,51 @@ import User from '../models/User.js';
 import bcrypt from 'bcrypt';
 
 export const resolvers = {
+  Mutation: {
+    signUp: async (_, args, __) => {
+      try {
+        let user = await User.findOne({ email: `${args.email}` });
+        if (user) {
+          return {
+            code: 401,
+            success: false,
+            message: 'User already on the system',
+            user: user,
+          };
+        } else {
+          let user = await new User({
+            password: args.password,
+            email: args.email,
+          });
+          const hashedPassword = await bcrypt.hash(user.password, 10);
+          user.password = hashedPassword;
+          let savedUser = await user.save();
+          if (savedUser) {
+            return {
+              code: 200,
+              success: true,
+              message: 'User created',
+              user: user,
+            };
+          } else {
+            return {
+              code: 401,
+              success: false,
+              message: 'Something went wrong',
+              user: user,
+            };
+          }
+        }
+      } catch (err) {
+        return {
+          code: err.extensions.response.status,
+          success: true,
+          message: err.extensions.response.body,
+          user: null,
+        };
+      }
+    },
+  },
   Query: {
     getAllProducts: async () => {
       try {
@@ -10,6 +55,7 @@ export const resolvers = {
       let products = await Product.find();
       return products;
     },
+
     getAllProductsByCategory: async (_, args, __) => {
       try {
       } catch (err) {}

@@ -1,7 +1,7 @@
 const products = [
   {
     id: 1,
-    stock: 3,
+    stock: 2,
     slug: 'yx1-earphones',
     name: 'YX1 Wireless Earphones',
 
@@ -103,7 +103,7 @@ const products = [
   },
   {
     id: 2,
-    stock: 3,
+    stock: 7,
     slug: 'xx59-headphones',
     name: 'XX59 Headphones',
     image: {
@@ -200,7 +200,7 @@ const products = [
   },
   {
     id: 3,
-    stock: 3,
+    stock: 2,
     slug: 'xx99-mark-one-headphones',
     name: 'XX99 Mark I Headphones',
     image: {
@@ -310,7 +310,7 @@ const products = [
 
   {
     id: 4,
-    stock: 3,
+    stock: 8,
     slug: 'xx99-mark-two-headphones',
     name: 'XX99 Mark II Headphones',
     image: {
@@ -423,7 +423,7 @@ const products = [
   },
   {
     id: 5,
-    stock: 3,
+    stock: 2,
     slug: 'zx7-speaker',
     name: 'ZX7 Speaker',
     image: {
@@ -524,7 +524,7 @@ const products = [
   },
   {
     id: 6,
-    stock: 3,
+    stock: 11,
     slug: 'zx9-speaker',
     name: 'ZX9 Speaker',
     image: {

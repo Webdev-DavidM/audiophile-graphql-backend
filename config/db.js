@@ -1,7 +1,5 @@
 import mongoose from 'mongoose';
 
-let uri = process.env.mongoURI;
-
 // adjust the data connection below as required.
 
 const connectDB = async () => {
