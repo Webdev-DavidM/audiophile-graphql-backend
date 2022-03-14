@@ -5,6 +5,7 @@ import { typeDefs } from './graphql/typeDefs.js';
 import express from 'express';
 import http from 'http';
 import path from 'path';
+import connectDB from './config/db.js';
 
 async function startApolloServer() {
   const app = express();
@@ -19,8 +20,10 @@ async function startApolloServer() {
 
   await server.start();
   app.get('*', express.static('public'));
+  connectDB();
   server.applyMiddleware({ app });
-  await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
+  let port = process.env.PORT | 4000;
+  await new Promise((resolve) => httpServer.listen(port, resolve));
   console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
 }
 
