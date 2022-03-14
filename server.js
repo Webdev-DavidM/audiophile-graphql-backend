@@ -19,7 +19,10 @@ async function startApolloServer() {
   });
 
   await server.start();
-  app.get('*', express.static('public'));
+  app.use(express.static('public'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+  });
   connectDB();
   server.applyMiddleware({ app });
   let port = process.env.PORT | 4000;
