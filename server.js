@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { ApolloServer } from 'apollo-server';
 import connectDB from './config/db.js';
 import { typeDefs } from './graphql/typeDefs.js';
