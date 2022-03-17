@@ -4,10 +4,13 @@ import mongoose from 'mongoose';
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.DATABASE, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(
+      'mongodb+srv://footballblubber:Technics1@cluster0.9ckfy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    );
     const db = await mongoose.connection;
     if (db.readyState === 1) {
       console.log('were connected!');
